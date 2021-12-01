@@ -1,19 +1,16 @@
-import Combinatorics from 'js-combinatorics';
+import { inputAsNumbersArray } from './utils/reader';
+
+function counter(input, step) {
+  const items = inputAsNumbersArray(input);
+  return items.reduce((counter, item, i) => {
+    return i >= step && item > items[i - step] ? counter + 1 : counter;
+  }, 0);
+}
 
 export function part1(input) {
-  const items = input.split('\n').map(x => +x);
-  let count = 0;
-  for (let i = 1; i < items.length; i++) {
-    if (items[i] > items[i - 1]) count++;
-  }
-  return count;
+  return counter(input, 1);
 }
 
 export function part2(input) {
-  const items = input.split('\n').map(x => +x);
-  let count = 0;
-  for (let i = 3; i < items.length; i++) {
-    if (items[i] > items[i - 3]) count++;
-  }
-  return count;
+  return counter(input, 3);
 }

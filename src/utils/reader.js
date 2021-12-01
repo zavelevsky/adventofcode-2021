@@ -7,3 +7,7 @@ export default function readFile(fileUrl) {
   const input = fs.readFileSync(inputFile).toString().trimRight();
   return input;
 }
+
+export function inputAsNumbersArray(input) {
+  return input.split('\n').map(x => +x);
+}
