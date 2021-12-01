@@ -7,24 +7,42 @@ describe('day01 2021', () => {
   describe('part1', () => {
     it('should work for part 1 examples', () => {
       expect(
-        part1(['1721', '979', '366', '299', '675', '1456'].join('\n')),
-      ).toEqual(514579);
+        part1(`199
+        200
+        208
+        210
+        200
+        207
+        240
+        269
+        260
+        263`),
+      ).toEqual(7);
     });
 
     it('should work for part 1 input', () => {
-      expect(part1(input)).toEqual(719796);
+      expect(part1(input)).toEqual(1791);
     });
   });
 
   describe('part2', () => {
     it('should work for part 2 examples', () => {
       expect(
-        part2(['1721', '979', '366', '299', '675', '1456'].join('\n')),
-      ).toEqual(241861950);
+        part2(`199
+        200
+        208
+        210
+        200
+        207
+        240
+        269
+        260
+        263`),
+      ).toEqual(5);
     });
 
     it('should work for part 2 input', () => {
-      expect(part2(input)).toEqual(144554112);
+      expect(part2(input)).toEqual(1822);
     });
   });
 });

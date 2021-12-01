@@ -2,16 +2,18 @@ import Combinatorics from 'js-combinatorics';
 
 export function part1(input) {
   const items = input.split('\n').map(x => +x);
-  const result = Combinatorics.bigCombination(items, 2).find(
-    x => x[0] + x[1] === 2020,
-  );
-  return result[0] * result[1];
+  let count = 0;
+  for (let i = 1; i < items.length; i++) {
+    if (items[i] > items[i - 1]) count++;
+  }
+  return count;
 }
 
 export function part2(input) {
   const items = input.split('\n').map(x => +x);
-  const result = Combinatorics.bigCombination(items, 3).find(
-    x => x[0] + x[1] + x[2] === 2020,
-  );
-  return result[0] * result[1] * result[2];
+  let count = 0;
+  for (let i = 3; i < items.length; i++) {
+    if (items[i] > items[i - 3]) count++;
+  }
+  return count;
 }
