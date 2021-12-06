@@ -179,4 +179,15 @@ export default class LinkedList {
 
     return this;
   }
+
+  getCount() {
+    let count = 0;
+    let currentNode = this.head;
+    while (currentNode) {
+      count++;
+      currentNode = currentNode.next;
+    }
+
+    return count;
+  }
 }
